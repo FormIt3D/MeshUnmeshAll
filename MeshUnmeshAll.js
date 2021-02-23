@@ -14,7 +14,7 @@ FormItWorkflowPlugins.MeshAll = function()
     // if nothing is selected, throw a message and return
     if (currentSelection.length === 0)
     {
-        var message = "Nothing selected for conversion. Select Objects and/or Groups and try again.";
+        var message = "Nothing selected for conversion. Select Group instances and/or Objects and try again.";
         FormIt.UI.ShowNotification(message, FormIt.NotificationType.Error, 0);
         console.log(message);
         return;
@@ -82,7 +82,7 @@ FormItWorkflowPlugins.MeshAll = function()
     }
     else 
     {
-        var message = "Converted selected Objects to Meshes, including " + numberOfGroupsInSelection + " selected Groups, " + completedHistoryIdArray.length + " unique Group sets, and " + totalInstanceHits + " total instances.";
+        var message = "Converted Objects to Meshes, affecting " + numberOfGroupsInSelection + " selected Group instances, " + completedHistoryIdArray.length + " unique Groups, and " + totalInstanceHits + " total instances.";
         FormIt.UI.ShowNotification(message, FormIt.NotificationType.Information, 0);
         console.log(message);
     }
@@ -102,7 +102,7 @@ FormItWorkflowPlugins.UnmeshAll = function()
     // if nothing is selected, throw a message and return
     if (currentSelection.length === 0)
     {
-        var message = "Nothing selected for conversion. Select Meshes and/or Groups and try again.";
+        var message = "Nothing selected for conversion. Select Group instances and/or Meshes and try again.";
         FormIt.UI.ShowNotification(message, FormIt.NotificationType.Error, 0);
         console.log(message);
         return;
@@ -136,7 +136,6 @@ FormItWorkflowPlugins.UnmeshAll = function()
                         //console.log("Skipping history: " + reachableHistoriesArray[k]);
                         
                         // add this to the total instance count
-                        totalInstanceHits ++;
                         continue;
                     }
 
@@ -174,7 +173,7 @@ FormItWorkflowPlugins.UnmeshAll = function()
     }
     else 
     {
-        var message = "Converted selected Meshes to Objects, including " + numberOfGroupsInSelection + " selected Groups, " + completedHistoryIdArray.length + " unique Group sets, and " + totalInstanceHits + " total instances."
+        var message = "Converted Meshes to Objects, affecting " + numberOfGroupsInSelection + " selected Group instances, " + completedHistoryIdArray.length + " unique Groups, and " + totalInstanceHits + " total instances."
         FormIt.UI.ShowNotification(message, FormIt.NotificationType.Information, 0);
         console.log(message);
     }
