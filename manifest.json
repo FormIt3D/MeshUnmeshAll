@@ -3,7 +3,7 @@
     "PluginDescription": "Mesh and Unmesh all nested geometry inside selected Groups.",
     "PluginType": "Panel",
     "Scripts": [
-        "PLUGINLOCATION/MeshUnmeshAll.js"
+        "PLUGINLOCATION/MeshUnmeshAll_Client.js"
     ]
     ,"Panel": "PLUGINLOCATION/index.html",
     "PanelIcon": "PLUGINLOCATION/IMG/mesh_unmesh_all@2x.png"

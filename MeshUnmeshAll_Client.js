@@ -1,15 +1,18 @@
-if (typeof FormItWorkflowPlugins == 'undefined')
+if (typeof MeshUnmeshAll == 'undefined')
 {
-    FormItWorkflowPlugins = {};
+    MeshUnmeshAll = {};
 }
 
-FormItWorkflowPlugins.MeshAll = function()
+/*** application code - runs asynchronously from plugin process to communicate with FormIt ***/
+/*** the FormIt application-side JS engine only supports ES5 syntax, so use var here ***/
+
+MeshUnmeshAll.meshAll = function()
 {
     console.clear();
     console.log("Mesh All Plugin\n");
 
     // get selection info
-    FormItWorkflowPlugins.getSelectionInfo();
+    MeshUnmeshAll.getSelectionInfo();
     
     // if nothing is selected, throw a message and return
     if (currentSelection.length === 0)
@@ -88,13 +91,13 @@ FormItWorkflowPlugins.MeshAll = function()
     }
 }
 
-FormItWorkflowPlugins.UnmeshAll = function()
+MeshUnmeshAll.unmeshAll = function()
 {
     console.clear();
     console.log("Unmesh All Plugin\n");
 
     // get selection info
-    FormItWorkflowPlugins.getSelectionInfo();
+    MeshUnmeshAll.getSelectionInfo();
 
     // cosine of the angle where edges are considered smooth
     var smoothAngle = 0.866025403784439;
@@ -180,7 +183,7 @@ FormItWorkflowPlugins.UnmeshAll = function()
 }
 
 // creates global variables and arrays for determining the items in the selection set
-FormItWorkflowPlugins.getSelectionInfo = function()
+MeshUnmeshAll.getSelectionInfo = function()
 {    
     selectedObjectsIDArray = [];
     selectedObjectsTypeArray = [];
@@ -218,26 +221,4 @@ FormItWorkflowPlugins.getSelectionInfo = function()
         selectedObjectsTypeArray.push(nType);
         //console.log("Object type array: " + selectedObjectsTypeArray);
     }
-}
-
-// Submit runs from the HTML page.  This script gets loaded up in both FormIt's
-// JS engine and also in the embedded web JS engine inside the panel.
-FormItWorkflowPlugins.SubmitMeshAll = function()
-{
-    var meshAllArgs =
-    {
-
-    }
-
-    window.FormItInterface.CallMethod("FormItWorkflowPlugins.MeshAll", meshAllArgs);
-}
-
-FormItWorkflowPlugins.SubmitUnmeshAll = function()
-{
-    var unmeshAllArgs =
-    {
-
-    }
-
-    window.FormItInterface.CallMethod("FormItWorkflowPlugins.UnmeshAll", unmeshAllArgs);
 }
