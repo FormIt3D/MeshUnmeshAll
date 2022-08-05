@@ -80,13 +80,13 @@ MeshUnmeshAll.meshAll = function()
     if (!reachableHistoriesArray)
     {
         var message = "Converted selected Objects to Meshes.";
-        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Information, 0);
+        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Success, 0);
         console.log(message);
     }
     else 
     {
         var message = "Converted Objects to Meshes, affecting " + numberOfGroupsInSelection + " selected Group instances, " + completedHistoryIdArray.length + " unique Groups, and " + totalInstanceHits + " total instances.";
-        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Information, 0);
+        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Success, 0);
         console.log(message);
     }
 }
@@ -171,13 +171,13 @@ MeshUnmeshAll.unmeshAll = function()
     if (!reachableHistoriesArray)
     {
         var message = "Converted selected Meshes to Objects.";
-        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Information, 0);
+        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Success, 0);
         console.log(message);
     }
     else 
     {
         var message = "Converted Meshes to Objects, affecting " + numberOfGroupsInSelection + " selected Group instances, " + completedHistoryIdArray.length + " unique Groups, and " + totalInstanceHits + " total instances."
-        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Information, 0);
+        FormIt.UI.ShowNotification(message, FormIt.NotificationType.Success, 0);
         console.log(message);
     }
 }

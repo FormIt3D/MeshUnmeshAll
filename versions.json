@@ -4,6 +4,7 @@
             "major":21,
             "minor":0
         },
-        "path":"v21_0"
+        "path":"v21_0",
+        "reason":"Adding Success message type, which is v21 and newer only"
     }
 ]
